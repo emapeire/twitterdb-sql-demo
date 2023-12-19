@@ -1,1 +1,1 @@
-# SQL DEMO
+# Twitter DB - SQL demo
