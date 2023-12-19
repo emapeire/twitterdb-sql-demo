@@ -58,19 +58,15 @@ VALUES
 -- create table followers
 DROP TABLE IF EXISTS followers;
 CREATE TABLE followers (
-	follower_id INT NOT NULL,
+    follower_id INT NOT NULL,
     following_id INT NOT NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (follower_id) REFERENCES users(user_id),
     FOREIGN KEY (following_id) REFERENCES users(user_id),
     PRIMARY KEY (follower_id, following_id),
-    CHECK (follower_id != following_id) -- Check constraint to prevent self-following
+    -- Check constraint to prevent self-following
+    CHECK (follower_id != following_id)
 );
-
--- alter table followers
-ALTER TABLE followers
-ADD CONSTRAINT check_follower_id
-CHECK (follower_id != following_id);
 
 -- create table tweet_likes
 DROP TABLE IF EXISTS tweet_likes;
