@@ -1,1 +1,1 @@
-# Twitter DB - SQL demo
+# Twitter DB - SQL demo 🐦
